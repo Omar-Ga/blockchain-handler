@@ -17,7 +17,7 @@ class AdminController {
                 message: 'Contract paused successfully',
                 data: {
                     transactionHash: result.hash,
-                    blockNumber: result.receipt.blockNumber.toString(),
+                    blockNumber: result.receipt ? result.receipt.blockNumber.toString() : 'pending',
                 },
             });
         } catch (error: any) {
@@ -37,7 +37,7 @@ class AdminController {
                 message: 'Contract unpaused successfully',
                 data: {
                     transactionHash: result.hash,
-                    blockNumber: result.receipt.blockNumber.toString(),
+                    blockNumber: result.receipt ? result.receipt.blockNumber.toString() : 'pending',
                 },
             });
         } catch (error: any) {
@@ -68,7 +68,7 @@ class AdminController {
                 message: 'Issuer added successfully',
                 data: {
                     transactionHash: result.hash,
-                    blockNumber: result.receipt.blockNumber.toString(),
+                    blockNumber: result.receipt ? result.receipt.blockNumber.toString() : 'pending',
                     issuerAddress: address,
                 },
             });
@@ -100,7 +100,7 @@ class AdminController {
                 message: 'Issuer removed successfully',
                 data: {
                     transactionHash: result.hash,
-                    blockNumber: result.receipt.blockNumber.toString(),
+                    blockNumber: result.receipt ? result.receipt.blockNumber.toString() : 'pending',
                     issuerAddress: address,
                 },
             });

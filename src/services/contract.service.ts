@@ -107,11 +107,11 @@ class ContractService {
             instructorName,
         ]);
 
-        const receipt = await publicClient.waitForTransactionReceipt({ hash });
+        // const receipt = await publicClient.waitForTransactionReceipt({ hash });
 
         return {
             hash,
-            receipt,
+            receipt: null,
         };
     }
 
@@ -125,11 +125,11 @@ class ContractService {
         const sigBytes32 = stringToBytes32(signature);
 
         const hash = await contract.write.revokeCertificate([sigBytes32, reason]);
-        const receipt = await publicClient.waitForTransactionReceipt({ hash });
+        // const receipt = await publicClient.waitForTransactionReceipt({ hash });
 
         return {
             hash,
-            receipt,
+            receipt: null,
         };
     }
 
@@ -138,11 +138,11 @@ class ContractService {
      */
     async pause(): Promise<{ hash: string; receipt: any }> {
         const hash = await contract.write.pause();
-        const receipt = await publicClient.waitForTransactionReceipt({ hash });
+        // const receipt = await publicClient.waitForTransactionReceipt({ hash });
 
         return {
             hash,
-            receipt,
+            receipt: null,
         };
     }
 
@@ -151,11 +151,11 @@ class ContractService {
      */
     async unpause(): Promise<{ hash: string; receipt: any }> {
         const hash = await contract.write.unpause();
-        const receipt = await publicClient.waitForTransactionReceipt({ hash });
+        // const receipt = await publicClient.waitForTransactionReceipt({ hash });
 
         return {
             hash,
-            receipt,
+            receipt: null,
         };
     }
 
@@ -164,11 +164,11 @@ class ContractService {
      */
     async addIssuer(issuerAddress: string): Promise<{ hash: string; receipt: any }> {
         const hash = await contract.write.addIssuer([issuerAddress as `0x${string}`]);
-        const receipt = await publicClient.waitForTransactionReceipt({ hash });
+        // const receipt = await publicClient.waitForTransactionReceipt({ hash });
 
         return {
             hash,
-            receipt,
+            receipt: null,
         };
     }
 
@@ -177,11 +177,11 @@ class ContractService {
      */
     async removeIssuer(issuerAddress: string): Promise<{ hash: string; receipt: any }> {
         const hash = await contract.write.removeIssuer([issuerAddress as `0x${string}`]);
-        const receipt = await publicClient.waitForTransactionReceipt({ hash });
+        // const receipt = await publicClient.waitForTransactionReceipt({ hash });
 
         return {
             hash,
-            receipt,
+            receipt: null,
         };
     }
 }

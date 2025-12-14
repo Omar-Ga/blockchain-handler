@@ -33,7 +33,7 @@ class CertificateController {
                 message: 'Certificate issued successfully',
                 data: {
                     transactionHash: result.hash,
-                    blockNumber: result.receipt.blockNumber.toString(),
+                    blockNumber: result.receipt ? result.receipt.blockNumber.toString() : 'pending',
                     signature,
                 },
             });
@@ -116,7 +116,7 @@ class CertificateController {
                 message: 'Certificate revoked successfully',
                 data: {
                     transactionHash: result.hash,
-                    blockNumber: result.receipt.blockNumber.toString(),
+                    blockNumber: result.receipt ? result.receipt.blockNumber.toString() : 'pending',
                     signature,
                     reason,
                 },
