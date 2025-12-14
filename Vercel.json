@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api/index.ts"
+    }
+  ],
+  "functions": {
+    "api/index.ts": {
+      "memory": 1024,
+      "maxDuration": 30
+    }
+  },
+  "env": {
+    "PRIVATE_KEY": "@private_key",
+    "RPC_URL": "@rpc_url",
+    "CHAIN_ID": "@chain_id",
+    "CONTRACT_ADDRESS": "@contract_address"
+  }
+}
